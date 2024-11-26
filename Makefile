@@ -1,10 +1,11 @@
 NAME = libft.a
 
-MY_SOURCES = ft_isalpha.c
+MY_SOURCES = $(wildcard *.c)
 
 MY_OBJECTS = $(MY_SOURCES:.c=.o)
 
 CC = cc
+
 CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
