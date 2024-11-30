@@ -1,20 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gderoyqn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 14:17:26 by gderoyqn          #+#    #+#             */
-/*   Updated: 2024/11/27 14:17:47 by gderoyqn         ###   ########.fr       */
+/*   Created: 2024/11/30 15:27:29 by gderoyqn          #+#    #+#             */
+/*   Updated: 2024/11/30 15:27:40 by gderoyqn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+int	ft_atoi(const char *nptr)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
-		return (1);
+	int	n;
+	int	pola;
+
+	n = 0;
+	pola = 1;
+	while (*nptr >= 7 && *nptr <= 13)
+		nptr++;
+	if (*nptr == '+')
+		nptr++;
+	else if (*nptr == '-')
+	{
+		nptr++;
+		pola = -1;
+	}
+	while (*nptr && ft_isdigit(*nptr))
+	{
+		n += (char)*nptr - '0';
+		if (ft_isdigit(*(nptr + 1)))
+			n *= 10;
+		nptr++;
+	}
+	return (n * pola);
+}
+
+/*
+int	main(void)
+{
+	const char str[] = "1";
+	int	n;
+	n = ft_atoi(str);
+	printf("Res: %d\n", n);
 	return (0);
 }
+*/
