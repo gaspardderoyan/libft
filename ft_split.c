@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gderoyqn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/02 18:16:59 by gderoyqn          #+#    #+#             */
+/*   Updated: 2024/12/02 18:17:10 by gderoyqn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 int	ft_count_subs(char const *s, char c)
@@ -28,7 +40,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 	int		i;
-	int		diff;
+	char	*start;
 
 	if (!s)
 		return (NULL);
@@ -38,18 +50,14 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (*s)
 	{
-		if (*s != c)
-		{
-			if (ft_strchr(s, c) != NULL)
-				diff = ft_strchr(s, c) - s;
-			else
-				diff = ft_strlen(s);
-			arr[i++] = ft_substr(s, 0, diff);
-			if (diff == (int)ft_strlen(s))
-				break;
-			s += diff;	
-		}
-		s++;
+		while (*s && *s == c)
+			s++;
+		if (*s == '\0')
+			break ;
+		start = (char *)s;
+		while (*s && *s != c)
+			s++;
+		arr[i++] = ft_substr(start, 0, s - start);
 	}
 	arr[i] = NULL;
 	return (arr);
