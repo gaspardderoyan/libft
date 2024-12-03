@@ -44,7 +44,10 @@ BONUS_OBJECTS = \
 	ft_lstsize.o \
 	ft_lstlast.o \
 	ft_lstadd_back.o \
-	ft_lstdelone.o
+	ft_lstdelone.o \
+	ft_lstclear.o \
+	ft_lstiter.o \
+	ft_lstmap.o
 
 CC = cc
 
