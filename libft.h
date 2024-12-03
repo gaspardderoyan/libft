@@ -6,13 +6,14 @@
 /*   By: gderoyqn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:30:39 by gderoyqn          #+#    #+#             */
-/*   Updated: 2024/12/02 18:25:03 by gderoyqn         ###   ########.fr       */
+/*   Updated: 2024/12/03 12:31:34 by gderoyqn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
+# include <limits.h>
 # include <stdio.h>
 
 int		ft_isalpha(int c);

@@ -1,74 +1,72 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gderoyqn <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/03 13:02:01 by gderoyqn          #+#    #+#             */
+/*   Updated: 2024/12/03 13:02:36 by gderoyqn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
+
+unsigned int	ft_abs(int n)
+{
+	unsigned int	num;
+
+	if (n == INT_MIN)
+		num = (unsigned int)INT_MAX + 1;
+	else if (n < 0)
+		num = -n;
+	else
+		num = n;
+	return (num);
+}
 
 int	ft_nbr_len(int n)
 {
-	int	i;
+	int				len;
+	unsigned int	num;
 
-	i = 0;
-	if (n == -2147483648)
-		return (10);
-	else if (n <= 0)
-		i = 1;
-	while (n > 0)
+	len = 0;
+	if (n <= 0)
+		len = 1;
+	num = ft_abs(n);
+	while (num != 0)
 	{
-		n /= 10;
-		i ++;
+		num /= 10;
+		len++;
 	}
-	return (i);
-}
-
-int	ft_power(int nb, int power)
-{
-	int res;
-
-	res = 1;
-	if (power == 0 && nb == 0)
-		return (res);
-	else if (power < 0)
-		return (0);
-	while (power-- > 0)
-		res *= nb;
-	return (res);
+	return (len);
 }
 
 char	*ft_itoa(int n)
 {
-	int		len;
-	int		neg;
-	char	*res;
-	char	*start;
+	int					len;
+	char				*res;
+	unsigned int		num;
 
-	len = 0;
-	neg = 0;
-	if (n < 0)
-	{
-		len++;
-		neg = 1;
-	}
-	len += ft_nbr_len(n);
+	len = ft_nbr_len(n);
 	res = (char *)malloc(sizeof(char) * (len + 1));
 	if (!res)
 		return (NULL);
-	if (n == -2147483648)
+	res[len] = '\0';
+	num = ft_abs(n);
+	if (n == 0)
 	{
-		ft_strlcpy(res, "-2147483648", 12);
+		res[0] = '0';
 		return (res);
 	}
-	else if (n == 0)
+	while (num != 0)
 	{
-		ft_strlcpy(res, "0", 2);
-		return (res);
+		res[--len] = (num % 10) + '0';
+		num /= 10;
 	}
-	start = res;
-	if (neg == 1)
-	{
-		*res++ = '-';
-		len--;
-		n *= -1;
-	}
-	while (len > 0)
-		*res++ = (n / ft_power(10, len-- - 1) % 10) + '0';
-	return (start);
+	if (n < 0)
+		res[--len] = '-';
+	return (res);
 }
 
 /*
