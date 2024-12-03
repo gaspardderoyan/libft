@@ -7,8 +7,8 @@ int	ft_nbr_len(int n)
 	i = 0;
 	if (n == -2147483648)
 		return (10);
-	else if (n < 0)
-		n *= -1;
+	else if (n <= 0)
+		i = 1;
 	while (n > 0)
 	{
 		n /= 10;
@@ -40,13 +40,7 @@ char	*ft_itoa(int n)
 
 	len = 0;
 	neg = 0;
-	if (n == -2147483648)
-	{
-		n = 2147483648;
-		neg = 1;
-		len++;
-	}
-	else if (n < 0)
+	if (n < 0)
 	{
 		len++;
 		neg = 1;
@@ -55,22 +49,34 @@ char	*ft_itoa(int n)
 	res = (char *)malloc(sizeof(char) * (len + 1));
 	if (!res)
 		return (NULL);
-	start = res;
-	if (neg)
+	if (n == -2147483648)
 	{
-		*res = '-';
+		ft_strlcpy(res, "-2147483648", 12);
+		return (res);
+	}
+	else if (n == 0)
+	{
+		ft_strlcpy(res, "0", 2);
+		return (res);
+	}
+	start = res;
+	if (neg == 1)
+	{
+		*res++ = '-';
 		len--;
-		res++;
+		n *= -1;
 	}
 	while (len > 0)
 		*res++ = (n / ft_power(10, len-- - 1) % 10) + '0';
 	return (start);
 }
 
+/*
 int	main(void)
 {
 	char	*res;
-	res = ft_itoa(-541);
+	res = ft_itoa(0);
 	printf("res: %s\n", res);
     return 0;
 }
+*/
