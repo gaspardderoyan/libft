@@ -6,7 +6,7 @@
 /*   By: gderoyqn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/30 15:27:29 by gderoyqn          #+#    #+#             */
-/*   Updated: 2024/11/30 15:27:40 by gderoyqn         ###   ########.fr       */
+/*   Updated: 2024/12/04 15:55:25 by gderoyqn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *nptr)
 
 	n = 0;
 	pola = 1;
-	while (*nptr >= 7 && *nptr <= 13)
+	while ((*nptr >= 9 && *nptr <= 13) || *nptr == ' ')
 		nptr++;
 	if (*nptr == '+')
 		nptr++;
