@@ -2,3 +2,4 @@ tests/
 libftTester/
 *.swp
 *.o
+a.out
