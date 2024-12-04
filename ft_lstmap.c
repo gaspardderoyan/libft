@@ -6,7 +6,7 @@
 /*   By: gderoyqn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:01:16 by gderoyqn          #+#    #+#             */
-/*   Updated: 2024/12/04 16:07:00 by gderoyqn         ###   ########.fr       */
+/*   Updated: 2024/12/04 16:58:50 by gderoyqn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_elem;
 	void	*content;
 
-	if (lst == NULL)
-		return (NULL);
 	new_list = NULL;
 	while (lst)
 	{
