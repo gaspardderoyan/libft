@@ -3,3 +3,4 @@ libftTester/
 *.swp
 *.o
 a.out
+libft.a
