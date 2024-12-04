@@ -6,18 +6,11 @@
 /*   By: gderoyqn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:12:29 by gderoyqn          #+#    #+#             */
-/*   Updated: 2024/12/04 13:12:30 by gderoyqn         ###   ########.fr       */
+/*   Updated: 2024/12/04 16:07:43 by gderoyqn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-char	ft_to_index(unsigned int i, char c)
-{
-	if (c >= 'a' && c <= 'z')
-		return (i + '0');
-	return (c);
-}
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
@@ -38,6 +31,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 }
 
 /*
+char	ft_to_index(unsigned int i, char c)
+{
+	if (c >= 'a' && c <= 'z')
+		return (i + '0');
+	return (c);
+}
 int	main(void)
 {
 	char	*res;
