@@ -6,7 +6,7 @@
 /*   By: gderoyqn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:56:12 by gderoyqn          #+#    #+#             */
-/*   Updated: 2024/12/04 12:56:15 by gderoyqn         ###   ########.fr       */
+/*   Updated: 2024/12/04 14:16:11 by gderoyqn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] || s[i] == '\0')
 	{
 		if (s[i] == (char)c)
 			return ((char *)&s[i]);
+		if (s[i] == '\0')
+			break ;
 		i++;
 	}
-	if (c == '\0')
-		return ((char *)&s[i]);
 	return (NULL);
 }
 
@@ -32,11 +32,13 @@ char	*ft_strchr(const char *s, int c)
 #include <stdio.h>
 int	main(void)
 {
-	char	str[] = "tripouille";
 	char	*ptr;
-	ptr = ft_strchr(str, 't' + 256);
+	ptr = ft_strchr("teste", 1024);
 	if (ptr)
-		printf("The char found was %p", (void *)ptr);
+	{
+		printf("The char's address found was %p\n", (void *)ptr);
+		printf("The char - 1 found was %c\n", *(ptr - 1));
+	}
 	else
 		printf("Returned NULL");
 	return (0);
