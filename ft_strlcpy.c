@@ -6,7 +6,7 @@
 /*   By: gderoyqn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/29 15:25:47 by gderoyqn          #+#    #+#             */
-/*   Updated: 2024/11/29 16:47:24 by gderoyqn         ###   ########.fr       */
+/*   Updated: 2024/12/04 12:33:11 by gderoyqn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
 	if (size == 0 || src == NULL || dest == NULL)
