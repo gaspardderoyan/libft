@@ -6,16 +6,11 @@
 /*   By: gderoyqn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:14:24 by gderoyqn          #+#    #+#             */
-/*   Updated: 2024/12/04 13:14:25 by gderoyqn         ###   ########.fr       */
+/*   Updated: 2024/12/06 13:53:49 by gderoyqn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_free_node(void *content)
-{
-	free(content);
-}
 
 void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
@@ -26,6 +21,11 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 }
 
 /*
+void	ft_free_node(void *content)
+{
+	free(content);
+}
+
 int	main(void)
 {
 	t_list *head;
