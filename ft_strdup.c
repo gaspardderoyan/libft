@@ -6,7 +6,7 @@
 /*   By: gderoyqn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:14:10 by gderoyqn          #+#    #+#             */
-/*   Updated: 2024/12/04 13:14:14 by gderoyqn         ###   ########.fr       */
+/*   Updated: 2024/12/06 17:11:55 by gderoyqn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,7 @@ char	*ft_strdup(const char *s)
 	len = ft_strlen(s);
 	new = (char *)malloc(sizeof(char) * (len + 1));
 	if (!new)
-	{
-		printf("Returning NULL\n");
 		return (NULL);
-	}
 	i = 0;
 	while (s[i])
 	{
