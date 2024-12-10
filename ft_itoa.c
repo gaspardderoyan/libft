@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-unsigned int	ft_abs(int n)
+static unsigned int	ft_abs(int n)
 {
 	unsigned int	num;
 
@@ -25,7 +25,7 @@ unsigned int	ft_abs(int n)
 	return (num);
 }
 
-int	ft_nbr_len(int n)
+static int	ft_nbr_len(int n)
 {
 	int				len;
 	unsigned int	num;

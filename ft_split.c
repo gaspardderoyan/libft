@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_count_subs(char const *s, char c)
+static int	ft_count_subs(char const *s, char c)
 {
 	int	count;
 	int	in_sub;
