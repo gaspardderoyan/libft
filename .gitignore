@@ -5,3 +5,4 @@ libft-war-machine/
 *.o
 a.out
 libft.a
+test.c
